@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/tailwindcss">
+          .is-responsive {
+            @apply relative;
+          }
+      </style>
+    <title>Navigation test</title>
+</head>
+<body>
+    <nav>
+        <div class="topnav bg-gray-700 overflow-hidden relative">
+            <a href="#home" class="bg-teal-700 float-none md:float-left block text-white text-left md:text-center px-3.5 py-4 decoration-0 text-lg hover:bg-gray-500 hover:text-white 
+              ">Home</a>
+            <div id="topNav" class="hidden md:block">
+              <a href="#news" class="float-none md:float-left text-gray-100 text-left md:text-center px-3.5 py-4 decoration-0 text-lg  hover:bg-gray-500 hover:text-white block 
+                ">News</a>
+              <a href="#contact" class="float-none md:float-left text-gray-100 text-left md:text-center px-3.5 py-4 decoration-0 text-lg  hover:bg-gray-500 hover:text-white block 
+                ">Contact</a>
+              <div class="dropdown float-none md:float-left md:overflow-hidden group block">
+                <button class="dropbtn text-lg border-0 outline-0 text-white px-3.5 py-4 bg-inherit m-0 hover:bg-gray-500 hover:text-white 
+                  block w-full md:w-auto text-left md:text-center" onclick="toggleDropdown('dropdown1')">Dropdown
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div id="dropdown1" class="dropdown-content hidden relative md:fixed bg-gray-200 min-w-40 shadow-lg z-10 group-hover:block">
+                  <a href="#" class="float-none text-black px-3.5 py-4 decoration-0 block hover:bg-gray-400 hover:text-white">Link 1</a>
+                  <a href="#" class="float-none text-black px-3.5 py-4 decoration-0 block hover:bg-gray-400 hover:text-white">Link 2</a>
+                  <a href="#" class="float-none text-black px-3.5 py-4 decoration-0 block hover:bg-gray-400 hover:text-white">Link 3</a>
+                </div>
+              </div>
+              <a href="#about" class="float-none md:float-left text-gray-100 text-left md:text-center px-3.5 py-4 decoration-0 text-lg hover:bg-gray-500 hover:text-white block 
+                ">About</a>
+            </div>
+            <a href="javascript:void(0);" class="icon absolute top-0 right-0 text-gray-100 text-center px-3.5 py-4 decoration-0 text-lg float-right block md:hidden md:float-none 
+              " onclick="toggleNav()">&#9776;</a>
+          </div>
+    </nav>
+
+    <script>
+        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+        function toggleNav() {
+        var x = document.getElementById("topNav");
+        if (x.classList.contains("hidden")) {
+            x.classList.remove("hidden");
+        } else {
+            x.classList.add("hidden");;
+        }
+        }
+
+        function toggleDropdown(el) {
+        var x = document.getElementById(el);
+        if (x.classList.contains("hidden")) {
+            x.classList.remove("hidden");
+        } else {
+            x.classList.add("hidden");;
+        }
+        }
+    </script>
+</body>
+</html>
